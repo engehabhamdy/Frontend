@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرجع أوامر Git و GitHub الشامل</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            background-color: #ebf5fb;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-right: 5px solid #3498db;
+            margin-top: 35px;
+        }
+        .step {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #e1e8ed;
+            border-radius: 6px;
+            background-color: #fafbfc;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #16a085;
+            font-size: 1.1em;
+        }
+        p {
+            margin: 5px 0 10px 0;
+            color: #555;
+        }
+        code {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 10px 14px;
+            display: block;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            direction: ltr;
+            text-align: left;
+            font-size: 0.95em;
+            overflow-x: auto;
+        }
+        .note {
+            background-color: #fef9e7;
+            border-right: 4px solid #f1c40f;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        ul {
+            margin: 5px 0;
+            padding-right: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>الدليل المرجعي الشامل: من GitHub إلى كود المشروع</h1>
+
+    <!-- المرحلة الأولى: خطوات موقع GitHub -->
+    <h2>المرحلة الأولى: خطوات موقع GitHub (تُنَفَّذ مرة واحدة لكل مشروع)</h2>
+
+    <div class="step">
+        <h3>1. الدخول وإنشاء مستودع جديد</h3>
+        <p>قم بفتح موقع GitHub وسجل دخولك، ثم اضغط على علامة <strong>(+)</strong> أعلى اليمين واختر <strong>New repository</strong>.</p>
+    </div>
+
+    <div class="step">
+        <h3>2. تسمية المستودع</h3>
+        <p>اكتب اسم المشروع في خانة <strong>Repository name</strong> (مثلاً: Frontend) واختر ما إذا كان Public أو Private.</p>
+    </div>
+
+    <div class="step">
+        <h3>3. الاستثناء المهم لإنشاء مستودع فارغ</h3>
+        <p><strong>تأكد تماماً من عدم وضع صح</strong> على خيار <u>Add a README file</u> ليبقى المستودع خالياً تماماً فتظهر لك شاشة الأوامر التعليمية المباشرة.</p>
+    </div>
+
+    <div class="step">
+        <h3>4. التأكيد وتنسيق الرابط</h3>
+        <p>اضغط على الزر الأخضر <strong>Create repository</strong> وانسخ رابط المستودع الخاص ببروفايلك والذي يكون بالشكل التالي:</p>
+        <code>https://github.com/engehabhamdy/Frontend.git</code>
+    </div>
+
+    <!-- المرحلة الثانية: الربط لأول مرة -->
+    <h2>المرحلة الثانية: الربط والرفع لأول مرة (تُنَفَّذ مرة واحدة في الـ Terminal)</h2>
+
+    <div class="step">
+        <h3>1. إنشاء ملف التعريف بالمشروع</h3>
+        <p>ينشئ ملف README.md ويكتب بداخله عنوان المشروع ليظهر كواجهة على GitHub.</p>
+        <code>echo "# Frontend" >> README.md</code>
+    </div>
+
+    <div class="step">
+        <h3>2. تفعيل نظام تتبع Git داخل المجلد</h3>
+        <p>يحول المجلد الحالي بداخل جهازك إلى مستودع محلي يتبعه نظام Git وينشئ مجلد .git المخفي.</p>
+        <code>git init</code>
+    </div>
+
+    <div class="step">
+        <h3>3. تجهيز ملف README الأول</h3>
+        <p>يضع ملف README.md في منطقة التجهيز تمهيداً لحفظه.</p>
+        <code>git add README.md</code>
+    </div>
+
+    <div class="step">
+        <h3>4. التوثيق والحفظ الأول (Commit)</h3>
+        <p>يلتقط صورة للنسخة الأولى مع إرفاق الرسالة التوضيحية الأولى.</p>
+        <code>git commit -m "first commit"</code>
+    </div>
+
+    <div class="step">
+        <h3>5. توحيد اسم الفرع الرئيسي</h3>
+        <p>يعدل اسم الفرع الأساسي في مشروعك ليصبح main ليتطابق مع معايير GitHub.</p>
+        <code>git branch -M main</code>
+    </div>
+
+    <div class="step">
+        <h3>6. ربط المجلد المحلي بمستودع GitHub</h3>
+        <p>يربط مجلد جهازك برابط المستودع الفارغ على السيرفر ويسمي الرابط origin.</p>
+        <code>git remote add origin https://github.com/engehabhamdy/Frontend.git</code>
+    </div>
+
+    <div class="step">
+        <h3>7. الرفع الأول وتثبيت المسار</h3>
+        <p>يرفع الملفات ويحفظ المسار بحيث تتمكن مستقبلاً من استخدام git push فقط.</p>
+        <code>git push -u origin main</code>
+    </div>
+
+    <!-- المرحلة الثالثة: الروتين اليومي -->
+    <h2>المرحلة الثالثة: الروتين اليومي عند إضافة كود جديد أو تعديل ملفات</h2>
+
+    <div class="step">
+        <h3>1. تجميع وتجهيز جميع التعديلات</h3>
+        <p>تُجمّع النقطة <strong>(.)</strong> كافة الملفات والتعديلات الجديدة داخل المجلد دفعة واحدة.</p>
+        <code>git add .</code>
+    </div>
+
+    <div class="step">
+        <h3>2. حفظ التعديلات محلياً بكتلة وصفيّة</h3>
+        <p>يحفظ لقطة جديدة من المشروع بداخل جهازك مع إعطائها اسماً يعبر عن نوع التعديل.</p>
+        <code>git commit -m "اكتب هنا وصفاً دقيقاً لما قمت بتعديله"</code>
+    </div>
+
+    <div class="step">
+        <h3>3. إرسال الكود المباشر إلى السيرفر</h3>
+        <p>ينقل كل الـ Commits المجهزة من جهازك إلى موقع GitHub فوراً.</p>
+        <code>git push</code>
+    </div>
+
+    <!-- المرحلة الرابعة: أوامر الفحص والتراجع -->
+    <h2>المرحلة الرابعة: أوامر الفحص والمتابعة والتراجع</h2>
+
+    <div class="step">
+        <h3>1. أمر كشف حالة المشروع (git status)</h3>
+        <p>يعرض لك التقرير الفعلي للملفات المعدلة والتجهيزات:</p>
+        <ul>
+            <li><strong>اللون الأحمر:</strong> ملفات معدلة أو جديدة لم تُجهز بـ git add . بعد.</li>
+            <li><strong>اللون الأخضر:</strong> ملفات مجهزة وجاهزة لأمر git commit.</li>
+        </ul>
+        <code>git status</code>
+    </div>
+
+    <div class="step">
+        <h3>2. أوامر التراجع (git reset)</h3>
+        <p>يستخدم لإلغاء الخطوات الأخيرة حسب حاجتك:</p>
+        <ul>
+            <li><strong>إلغاء التجهيز (إلغاء git add):</strong>
+                <code>git reset</code>
+            </li>
+            <li><strong>فك آخر commit مع الحفاظ على الكود في التجهيز:</strong>
+                <code>git reset --soft HEAD~1</code>
+            </li>
+            <li><strong>فك آخر commit وإرجاعه لتعديل عادي (أحمر):</strong>
+                <code>git reset --mixed HEAD~1</code>
+            </li>
+            <li><strong>التراجع الكامل ومسح آخر تعديلات نهائياً (خطر):</strong>
+                <code>git reset --hard HEAD~1</code>
+            </li>
+        </ul>
+    </div>
+
+    <div class="note">
+        <strong>💡 تذكر دائماً:</strong> هذا الملف مرجع دائم لك، افتحه في المتصفح في أي وقت لتراجع منه الأوامر!
+    </div>
+</div>
+
+</body>
+</html>
