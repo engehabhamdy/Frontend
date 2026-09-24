@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أساسيات عناصر HTML5 و CSS</title>
+    <style>
+        /* تنسيقات CSS الأساسية للعرض والتنسيق */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        /* العناصر الهيكلية Semantic HTML */
+        header {
+            background-color: #2c3e50;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* الحاويات والتنسيقات الخاصة */
+        .container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #2980b9;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        #unique-id {
+            background-color: #eaf2f8;
+            border-right: 5px solid #2980b9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        /* تنسيق الروابط والصور */
+        a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            border-radius: 6px;
+            display: block;
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* كود الشرح المباشر */
+        .code-hint {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #c7254e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر: الجزء العلوي للموقع -->
+    <header>
+        <h1>دليل أساسيات عناصر HTML</h1>
+        <p>مرجع تعليمي متكامل يحتوي على أهم الوسوم وتنسيقات CSS الأساسية</p>
+    </header>
+
+    <!-- المحتوى الرئيسي للموقع -->
+    <main>
+
+        <!-- قسم العناوين النصوص -->
+        <div class="container">
+            <h2 class="section-title">1. العناوين والنصوص (Headings & Typography)</h2>
+            
+            <h3>العناوين من h1 إلى h6:</h3>
+            <h1>عنوان رئيسي مستوى 1 (h1)</h1>
+            <h2>عنوان فرعي مستوى 2 (h2)</h2>
+            <h3>عنوان فرعي مستوى 3 (h3)</h3>
+            <h4>عنوان فرعي مستوى 4 (h4)</h4>
+            <h5>عنوان فرعي مستوى 5 (h5)</h5>
+            <h6>عنوان فرعي مستوى 6 (h6)</h6>
+
+            <hr>
+
+            <h3>الفقرات وتنسيقات النصوص:</h3>
+            <p>
+                الفقرات تساعد في تنظيم المحتوى وجعله أكثر قابلية للقراءة. 
+                يمكننا استخدام وسم <strong>strong للنص العريض المهم</strong>، 
+                وسم <em>em للنص المائل الممتد</em>، 
+                أو وسم <span style="color: #27ae60; font-weight: bold;">span لتنسيق جزء معين من النص</span> دون إحداث سطر جديد.
+            </p>
+        </div>
+
+        <!-- قسم الروابط والصور -->
+        <div class="container">
+            <h2 class="section-title">2. الروابط والصور (Links & Images)</h2>
+            
+            <p>
+                لإنشاء رابط نقوم باستخدام وسم <span class="code-hint">&lt;a&gt;</span> مع الخاصية <span class="code-hint">href</span> لوضع الرابط، والخاصية <span class="code-hint">target="_blank"</span> لفتح الرابط في تبويب جديد:
+            </p>
+            <p>
+                <a href="https://unsplash.com" target="_blank">اضغط هنا لزيارة موقع Unsplash للحصول على صور مجانية عالية الجودة</a>
+            </p>
+
+            <h3>إضافة صورة مع تحديد العرض والارتفاع (Width & Height):</h3>
+            <p>صورة مجانية مجلوبة من موقع Unsplash:</p>
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500" alt="صورة برمجة من Unsplash" width="400" height="250">
+        </div>
+
+        <!-- قسم القوائم -->
+        <div class="container">
+            <h2 class="section-title">3. القوائم (Lists)</h2>
+            
+            <h3>قائمة غير مرتبة (Unordered List - ul):</h3>
+            <ul>
+                <li>عنصر قائمة 1 (li)</li>
+                <li>عنصر قائمة 2 (li)</li>
+                <li>عنصر قائمة 3 (li)</li>
+            </ul>
+
+            <h3>قائمة مرتبة بأرقام (Ordered List - ol):</h3>
+            <ol>
+                <li>الخطوة الأولى (li)</li>
+                <li>الخطوة الثانية (li)</li>
+                <li>الخطوة الثالثة (li)</li>
+            </ol>
+        </div>
+
+        <!-- قسم الحاويات والفرز (Divisions & Classes & IDs) -->
+        <div class="container">
+            <h2 class="section-title">4. الحاويات المعرفة (div & Class & ID)</h2>
+            
+            <p>وسم <span class="code-hint">&lt;div&gt;</span> هو حاوية بلا معنى دلالي تُستخدم لتجميع العناصر وتنسيقها بواسطة CSS عبر الـ class أو الـ id.</p>
+
+            <div class="container-box">
+                هنا مربع عادي داخل div يحتوي على class باسم <span class="code-hint">container-box</span>.
+            </div>
+
+            <div id="unique-id" class="custom-class">
+                <strong>عنصر يحتوي على ID فريد و Class:</strong>
+                <br>
+                هذا النص موشوم بـ <span class="code-hint">id="unique-id"</span> للوصول إليه بشكل خاص في CSS، وبـ <span class="code-hint">class="custom-class"</span>.
+            </div>
+        </div>
+
+    </main>
+
+    <!-- الفوتر: الجزء السفلي للموقع -->
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - كورس Frontend React.js</p>
+    </footer>
+
+</body>
+</html>
