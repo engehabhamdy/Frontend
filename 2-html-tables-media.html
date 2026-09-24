@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شرح الجداول والوسائط في HTML</title>
+    <!-- ربط ملف التنسيقات الخارجي -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h1#title {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .section-box {
+            border: 1px solid #e9ecef;
+            background-color: #fafbfc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        .card {
+            background-color: #eef9ff;
+            border-right: 4px solid #3498db;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        /* تنسيق الجداول */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: #fff;
+        }
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2980b9;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        /* تنسيق الوسائط */
+        video, audio, iframe {
+            display: block;
+            margin: 15px 0;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- العنوان الرئيسي المربوط بـ ID -->
+    <h1 id="title">شرح الجداول والوسائط (Tables & Media)</h1>
+
+    <!-- 1. قسم الكروت والفقرات -->
+    <div class="section-box">
+        <h2>1. عناصر الكروت والفقرات (Cards & Paragraphs)</h2>
+        
+        <div class="card">
+            <p>هذا النص يقع داخل حاوية الكارت <code>&lt;div class="card"&gt;</code>: Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+
+        <p>فقرة نصية عادية خارج الكارت <code>&lt;p&gt;</code>: Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <!-- 2. قسم الجداول الهيكلية -->
+    <div class="section-box">
+        <h2>2. هيكلة الجداول (Tables Structure)</h2>
+        
+        <table>
+            <!-- عنوان الجدول -->
+            <caption>جدول بيانات الطلاب</caption>
+            
+            <!-- رأس الجدول -->
+            <thead>
+                <tr> <!-- tr = Table Row -->
+                    <th>الرقم (th)</th> <!-- th = Table Header -->
+                    <th>الاسم (th)</th>
+                    <th>المسار التعليمي (th)</th>
+                </tr>
+            </thead>
+            
+            <!-- جسم الجدول -->
+            <tbody>
+                <tr>
+                    <td>1</td> <!-- td = Table Data -->
+                    <td>إيهاب حمدي</td>
+                    <td>React.js Frontend</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>أحمد محمد</td>
+                    <td>Node.js Backend</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 3. قسم الوسائط (فيديو - صوت - إطار خارجي) -->
+    <div class="section-box">
+        <h2>3. عناصر الوسائط (Video, Audio & Iframe)</h2>
+
+        <!-- عنصر الفيديو مع عناصر التحكم وصورة التغطية -->
+        <h3>أ. عنصر الفيديو (Video with controls & poster)</h3>
+        <p>خاصية <code>controls</code> لتشغيل الفيديو، وخاصية <code>poster</code> لوضع صورة غلاف قبل التشغيل:</p>
+        <video controls poster="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" width="500">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+
+        <!-- عنصر الصوت -->
+        <h3>ب. عنصر الصوت (Audio)</h3>
+        <audio controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+
+        <!-- عنصر الإطار الخارجي iframe -->
+        <h3>ج. عنصر الإطار الخارجي (Iframe)</h3>
+        <p>يُستخدم لتضمين صفحة ويب خارجية أو فيديو داخل صفحتك:</p>
+        <iframe src="https://www.wikipedia.org" width="100%" height="300" style="border:1px solid #ccc;"></iframe>
+    </div>
+</div>
+
+<!-- ربط ملف السكربت الخارجي -->
+<script src="js/app.js"></script>
+</body>
+</html>
